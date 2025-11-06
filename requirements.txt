@@ -1,7 +1,7 @@
  Django==5.2.7
 gunicorn
 psycopg2-binary
-whitenoiseq
+whitenoise
 dj-database-url
 python-dotenv
 djangorestframework
