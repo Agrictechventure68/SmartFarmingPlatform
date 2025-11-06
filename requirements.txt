@@ -1,30 +1,7 @@
-# Core Framework
-Flask-RESTful>=0.3.10
-Flask-Cors>=4.0.0
-Flask-SQLAlchemy>=3.0.0
-Flask-Migrate>=4.0.4
-Flask-Login>=0.6.3
-Flask-Mail>=0.10.0
-Flask-WTF>=1.2.1
-
-# Database Drivers
-psycopg2-binary>=2.9.9   # For PostgreSQL (Render default)
-SQLAlchemy>=2.0.30
-
-# Environment Management
-python-dotenv>=1.0.1
-
-# Security & Password Hashing
-Werkzeug>=3.0.1
-bcrypt>=4.1.2
-
-# Utility Tools
-gunicorn>=21.2.0          # Production WSGI server for Render
-requests>=2.31.0
-itsdangerous>=2.2.0
-
-# Optional: For JSON handling, validation, etc.
-marshmallow>=3.21.0
-
-# Optional: If you want image or file upload features later
-Pillow>=10.
+ Django==5.2.7
+gunicorn
+psycopg2-binary
+whitenoiseq
+dj-database-url
+python-dotenv
+djangorestframework
