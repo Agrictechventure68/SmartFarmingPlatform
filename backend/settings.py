@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4bfy8dhq8*_f_ych@fd9^(rtj)#t^3ab_4chodj(gwxpj8uvg(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['smartfarmingplatform.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
