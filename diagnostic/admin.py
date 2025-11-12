@@ -3,5 +3,6 @@ from .models import Diagnostic
 
 @admin.register(Diagnostic)
 class DiagnosticAdmin(admin.ModelAdmin):
-    list_display = ('id', 'disease_name', 'symptoms')  # ✅ replace 'symptoms' if 
-    
+    list_display = ('name', 'category', 'region', 'created_at')
+    list_filter = ('category',)
+    search_fields = ('name', 'symptoms', 'causes')
