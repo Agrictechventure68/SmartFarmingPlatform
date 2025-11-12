@@ -4,4 +4,4 @@ from .models import Farmer
 class FarmerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Farmer
-        fields = '_all_'
+        fields = "__all__"
