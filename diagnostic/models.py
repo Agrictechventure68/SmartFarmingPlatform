@@ -8,7 +8,7 @@ class Diagnostic(models.Model):
     ]
 
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
-    name = models.CharField(max_length=100)             # e.g. 'Ugu Leaf Blight', 'Coccidiosis'
+    name = models.CharField(max_length=100)
     symptoms = models.TextField()
     causes = models.TextField()
     treatment = models.TextField()
@@ -16,5 +16,5 @@ class Diagnostic(models.Model):
     region = models.CharField(max_length=100, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
-    def _str_(self):
+    def __str__(self):
         return f"{self.name} ({self.category})"
