@@ -31,7 +31,8 @@ class DiagnosticHistory(models.Model):
     Tracks user diagnostics for crops, livestock, or aquaculture
     """
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='diagnostic_history')
-    diagnostic_entry = models.ForeignKey(DiagnosticEntry, on_delete=models.SET_NULL, null=True)symptoms_input = models.TextField()
+    diagnostic_entry = models.ForeignKey(DiagnosticEntry, on_delete=models.SET_NULL, null=True)
+symptoms_input = models.TextField()
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     region = models.CharField(max_length=100, blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
