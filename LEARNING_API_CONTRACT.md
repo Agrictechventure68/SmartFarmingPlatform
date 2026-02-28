@@ -5,3 +5,12 @@ Frontend Consumer: Agri_Empower Learning Engine
 Status: Active
 
 
+Endpoint
+
+GET /api/learning/<category>/<topic>/<enterprise>/
+
+### Example
+
+GET /api/learning/crops/vegetables/tomato/
+
+
