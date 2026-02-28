@@ -3,24 +3,34 @@ Version: v1.0
 Owner: Smart Farming Platform Backend
 Frontend Consumer: Agri_Empower Learning Engine
 Status: Active
+Last Updated: 2026-02-27
 
-Endpoint
+GET /api/v1/learning/<category>/<topic>/<enterprise>/
 
-GET /api/learning/<category>/<topic>/<enterprise>/
-
-### Example
-
-GET /api/learning/crops/vegetables/tomato/
-
-Authentication: Not required (public curriculum access)
-Response Type: application/json
-
-
-## URL Parameter Rules
-
-category:
-- crops
-- livestock
+{
+  "production": {
+    "title": "Production",
+    "levels": {
+      "foundation": {
+        "summary": "string",
+        "content": ["string"],
+        "pdf": "string (optional)",
+        "video": "string (optional)"
+      },
+      "intermediate": {},
+      "advanced": {},
+      "specialisation": {}
+    }
+  },
+  "processing": {
+    "title": "Processing",
+    "levels": {}
+  },
+  "agribusiness": {
+    "title": "Agribusiness",
+    "levels": {}
+  }
+}
 
 topic:
 - lowercase
