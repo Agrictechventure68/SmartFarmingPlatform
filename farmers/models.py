@@ -7,5 +7,5 @@ class Farmer(models.Model):
     farm_type = models.CharField(max_length=100)
     registration_date = models.DateTimeField(auto_now_add=True)
 
-    def _str_(self):
+    def __str__(self):
         return self.name
