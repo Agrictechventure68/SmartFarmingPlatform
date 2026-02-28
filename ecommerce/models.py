@@ -8,5 +8,5 @@ class Product(models.Model):
     description = models.TextField(blank=True)
     added_on = models.DateTimeField(auto_now_add=True)
 
-    def _str_(self):
+    def __str__(self):
         return self.name
