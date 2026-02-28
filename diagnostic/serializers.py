@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Diagnostic
+from .models import DiagnosticEntry
+
 
 class DiagnosticEntrySerializer(serializers.ModelSerializer):
     class Meta:
