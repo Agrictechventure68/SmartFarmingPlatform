@@ -1,4 +1,7 @@
-from rest_framework import filters
+from rest_framework import viewsets, filters
+from .models import DiagnosticEntry
+from .serializers import DiagnosticEntrySerializer
+
 
 class DiagnosticViewSet(viewsets.ModelViewSet):
     queryset = DiagnosticEntry.objects.all().order_by('-created_at')
