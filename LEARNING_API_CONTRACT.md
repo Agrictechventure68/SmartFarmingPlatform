@@ -5,7 +5,42 @@ Frontend Consumer: Agri_Empower Learning Engine
 Status: Active
 Last Updated: 2026-02-27
 
+
+----------------------------------------
+## Base URL
+
+/api/v1/
+
+
+----------------------------------------
+## Endpoint
+
+GET /api/v1/learning/<enterprise>/
+
+OR
+
 GET /api/v1/learning/<category>/<topic>/<enterprise>/
+
+Description:
+Returns structured learning content for a specific enterprise.
+
+
+----------------------------------------
+## Path Parameters
+
+enterprise:
+- lowercase
+- underscore allowed
+
+category:
+- lowercase
+- optional (if using extended route)
+
+topic:
+- lowercase
+- optional
+
+
 
 {
   "production": {
@@ -78,23 +113,29 @@ Response Format (MUST MATCH EXACTLY)
   }
 }
 
-Rules:
+----------------------------------------
+## Response Format (MUST MATCH EXACTLY)
+
+{ ... your JSON structure ... }
+
+----------------------------------------
+## Rules
+
 - All keys must be lowercase.
-- No wrapper object (e.g., no {"data": {...}})
+- No wrapper object.
 - No pagination.
-- No metadata fields.
+- No metadata fields in v1.
 - Missing levels must return empty object {}.
 
+----------------------------------------
 ## Error Responses
 
 404 – Enterprise Not Found
+{ "error": "Enterprise not found" }
 
-{
-  "error": "Enterprise not found"
-}
+400 – Invalid learning path
+{ "error": "Invalid learning path" }
+## Error Responses
 
-400 – Invalid category/topic/enterprise combination
-
-{
   "error": "Invalid learning path"
 }
