@@ -17,9 +17,6 @@ Last Updated: 2026-02-27
 
 GET /api/v1/learning/<enterprise>/
 
-OR
-
-GET /api/v1/learning/<category>/<topic>/<enterprise>/
 
 Description:
 Returns structured learning content for a specific enterprise.
