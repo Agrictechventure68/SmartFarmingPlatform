@@ -5,39 +5,29 @@ Frontend Consumer: Agri_Empower Learning Engine
 Status: Active
 Last Updated: 2026-02-27
 
-
-----------------------------------------
+--------------------------------------------------
 ## Base URL
 
 /api/v1/
 
-
-----------------------------------------
+--------------------------------------------------
 ## Endpoint
 
 GET /api/v1/learning/<enterprise>/
 
-
 Description:
 Returns structured learning content for a specific enterprise.
 
-
-----------------------------------------
+--------------------------------------------------
 ## Path Parameters
 
 enterprise:
+- required
 - lowercase
-- underscore allowed
+- underscore allowed (e.g., tomato_farming, rabbit_production)
 
-category:
-- lowercase
-- optional (if using extended route)
-
-topic:
-- lowercase
-- optional
-
-
+--------------------------------------------------
+## Response Format (MUST MATCH EXACTLY)
 
 {
   "production": {
@@ -46,8 +36,8 @@ topic:
       "foundation": {
         "summary": "string",
         "content": ["string"],
-        "pdf": "string (optional)",
-        "video": "string (optional)"
+        "pdf": "string (optional, full URL)",
+        "video": "string (optional, full URL)"
       },
       "intermediate": {},
       "advanced": {},
@@ -64,13 +54,8 @@ topic:
   }
 }
 
-topic:
-- lowercase
-- underscore allowed (e.g., food_crops, land_animals)
-
-enterprise:
-- lowercase
-- underscore allowed
+--------------------------------------------------
+## Field Definitions
 
 pillar:
 - production
@@ -83,56 +68,35 @@ level:
 - advanced
 - specialisation
 
-Response Format (MUST MATCH EXACTLY)
+content:
+- plain text only
+- array of paragraph strings
 
-{
-  "production": {
-    "title": "Production",
-    "levels": {
-      "foundation": {
-        "summary": "string",
-        "content": ["string"],
-        "pdf": "string (optional)",
-        "video": "string (optional)"
-      },
-      "intermediate": {},
-      "advanced": {},
-      "specialisation": {}
-    }
-  },
-  "processing": {
-    "title": "Processing",
-    "levels": {}
-  },
-  "agribusiness": {
-    "title": "Agribusiness",
-    "levels": {}
-  }
-}
+pdf:
+- must be full downloadable URL
 
-----------------------------------------
-## Response Format (MUST MATCH EXACTLY)
+video:
+- must be full URL (YouTube or hosted link)
 
-{ ... your JSON structure ... }
-
-----------------------------------------
+--------------------------------------------------
 ## Rules
 
 - All keys must be lowercase.
-- No wrapper object.
+- No wrapper object (no {"data": {...}}).
 - No pagination.
 - No metadata fields in v1.
 - Missing levels must return empty object {}.
+- Missing pillars must still appear with empty structure.
 
-----------------------------------------
+--------------------------------------------------
 ## Error Responses
 
 404 – Enterprise Not Found
-{ "error": "Enterprise not found" }
+{
+  "error": "enterprise not found"
+}
 
-400 – Invalid learning path
-{ "error": "Invalid learning path" }
-## Error Responses
-
-  "error": "Invalid learning path"
+400 – Invalid enterprise format
+{
+  "error": "invalid learning path"
 }
