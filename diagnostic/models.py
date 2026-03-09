@@ -1,4 +1,5 @@
-from django.db import models
+
+‎ ‎from django.db import models
 ‎from django.contrib.auth.models import User
 ‎
 ‎
@@ -41,6 +42,6 @@ from django.db import models
 ‎    timestamp = models.DateTimeField(auto_now_add=True)
 ‎
 ‎    def __str__(self):
-‎        entry_name = self.diagnostic_entry.name if self.diagnostic_entry else "Deleted Entry"
-‎        return f"{self.user.username} - {entry_name} ({self.timestamp.date()})"
+‎        return f"{self.user.username} - {self.diagnostic_entry.name} ({self.timestamp.date()})"
+‎
 ‎
